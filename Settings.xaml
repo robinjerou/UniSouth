@@ -1,0 +1,301 @@
+﻿<Window x:Class="EventDrivenProgEnrollmentSystem.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EventDrivenProgEnrollmentSystem"
+        mc:Ignorable="d"
+        Title="Settings" Height="550" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="250"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Border Grid.Column="3" Background="#FCFBFF"/>
+
+        <Border Grid.Column="0" Background="#C7B9FF" CornerRadius="0,20,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="147.54"/>
+                    <RowDefinition Height="180"/>
+                    <!-- icons -->
+                    <RowDefinition Height="*"/>
+                    <!-- spacer -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- help button -->
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0"  HorizontalAlignment="Center" Margin="0,20,0,0" Orientation="Vertical" Grid.RowSpan="2">
+                    <!-- Home -->
+                    <Button Width="80" Height="50"  Background="Transparent" BorderThickness="0"  Click="Nav_Home_Click" Cursor="Hand">
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Image Source="C:\Users\Robin\Downloads\house.png" Height="16" Width="26" />
+                            <TextBlock Text="Home" FontSize="8" Margin="0,6,0,0" HorizontalAlignment="Center" TextWrapping="Wrap"  Width="60"  TextAlignment="Center" Foreground="#64379F" FontFamily="Inter" FontWeight="Bold"/>
+                        </StackPanel>
+                    </Button>
+
+                    <!-- Academic Record -->
+                    <Button Width="80" Height="60" Background="Transparent" BorderThickness="0" Click="Nav_AcademicRecord_Click" Cursor="Hand">
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Image Source="C:\Users\Robin\Downloads\circle-check.png" Height="16" Width="26"/>
+                            <TextBlock Text="Academic Record" FontSize="8" Margin="0,4,0,0" HorizontalAlignment="Center" Width="70"  TextAlignment="Center" Foreground="#64379F" FontFamily="Inter" FontWeight="Bold"/>
+                        </StackPanel>
+                    </Button>
+
+                    <!-- Account Record -->
+                    <Button Width="80" Height="60" Background="Transparent" BorderThickness="0" Click="Nav_AccountRecord_Click" Cursor="Hand">
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Image Source="C:\Users\Robin\Downloads\landmark.png" Height="16" Width="26"/>
+                            <TextBlock Text="Account Record" FontSize="8" Margin="0,4,0,0" HorizontalAlignment="Center"  TextWrapping="Wrap" Width="60"  TextAlignment="Center" Foreground="#64379F" FontFamily="Inter" FontWeight="Bold"/>
+                        </StackPanel>
+                    </Button>
+
+                    <!-- Concerns -->
+                    <Button Width="80" Height="60"  Background="Transparent" BorderThickness="0"  Click="Nav_Concerns_Click" Cursor="Hand">
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Image Source="C:\Users\Robin\Downloads\handshake.png" Height="16" Width="26"/>
+                            <TextBlock Text="Concerns" FontSize="8" Margin="0,4,0,0" HorizontalAlignment="Center"  TextWrapping="Wrap"  Width="60"  TextAlignment="Center" Foreground="#64379F" FontFamily="Inter" FontWeight="Bold"/>
+                        </StackPanel>
+                    </Button>
+
+                    <!-- Settings -->
+                    <Button Width="80" Height="70" Background="Transparent" BorderThickness="0" Click="Nav_Settings_Click" Cursor="Hand">
+                        <StackPanel HorizontalAlignment="Center">
+                            <Grid>
+                                <Ellipse Fill="#9854CB" Height="50" Width="50"/>
+                                <Image Source="C:\Users\Robin\Downloads\settings (1).png" Height="16" Width="26"/>
+                            </Grid>
+                            <TextBlock Text="Settings" FontSize="8" Margin="0,4,0,0" HorizontalAlignment="Center"  TextWrapping="Wrap"  Width="60"  TextAlignment="Center" Foreground="#64379F" FontFamily="Inter" FontWeight="Bold"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+
+                <!-- “Need Help?” button pinned to bottom -->
+                <Button Grid.Row="3" Content="Need Help?" Width="70" Height="25" Background="#E1D2FF" Foreground="#64379F" FontFamily="Inter" FontSize="8" FontWeight="Bold" BorderBrush="Transparent" HorizontalAlignment="Center" Margin="0,0,0,16" Click="Help_Click" Cursor="Hand">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="16" SnapsToDevicePixels="True">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+        </Border>
+
+        <!--Rectangle Frame-->
+        <!--<StackPanel Grid.Column="1" Grid.Row="1">
+            <Rectangle Fill="#F5F2FF" Stroke="Black" StrokeThickness="1" RadiusX="12" RadiusY="12"></Rectangle>
+        </StackPanel>-->
+
+         
+        
+        <!--Form-->
+        <Grid Grid.Column="1" Grid.Row="1" Margin="16">
+            <!-- card background -->
+            <Rectangle Fill="#F5F2FF" Stroke="#2D2D2D" StrokeThickness="1" RadiusX="12" RadiusY="12"/>
+
+            <!-- content -->
+            <Grid Margin="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <!-- header + edit button -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- underline -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- first two rows of inputs -->
+                    <RowDefinition Height="250"/>
+                    <!-- next two rows of inputs -->
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <!-- last two rows of inputs -->
+                    <RowDefinition Height="*"/>
+                    <!-- spacer -->
+                </Grid.RowDefinitions>
+
+                <!-- 1) Header + “Edit Account” pill -->
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <Ellipse x:Name="ellipseSettingsProfile" Width="80" Height="80" Fill="LightGray"/>
+                        <TextBlock Text="Profile" FontSize="24" FontWeight="SemiBold" VerticalAlignment="Center" Margin="8,0,0,0"/>
+                    </StackPanel>
+                    <Button Grid.Column="1" Content="Edit Account"  Background="#9854CB" Foreground="White" Padding="12,6" BorderThickness="0" VerticalAlignment="Center" Cursor="Hand" Click="EditAccountButton_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" 
+                                        CornerRadius="8" 
+                                        SnapsToDevicePixels="True">
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"
+                                  Margin="{TemplateBinding Padding}"
+                                  RecognizesAccessKey="True"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+
+                      
+                <!-- 3) Six form fields in three Grid rows -->
+                <Grid Grid.Row="2" Margin="0,0,0,12">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="16"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Row 0 -->
+                    <StackPanel Grid.Row="0" Grid.Column="0">
+                        <TextBlock Text="First Name" FontSize="12" Margin="0,0,0,4"/>
+                        <TextBox x:Name="txtFirstName" Height="28" BorderBrush="{x:Null}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Grid.Column="2">
+                        <TextBlock Text="Last Name" FontSize="12" Margin="0,0,0,4"/>
+                        <TextBox x:Name="txtLastName" Height="28" BorderBrush="{x:Null}"/>
+                    </StackPanel>
+
+                    <!-- Row 1 -->
+                    <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,12,0,0">
+                        <TextBlock Text="Email" FontSize="12" Margin="0,0,0,4"/>
+                        <TextBox x:Name="txtEmail" Height="28" BorderBrush="{x:Null}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="2" Margin="0,12,0,0">
+                        <TextBlock Text="Birthdate" FontSize="12" Margin="0,0,0,4"/>
+                        <TextBox x:Name="txtBirthdate" Height="28" BorderBrush="{x:Null}"/>
+                    </StackPanel>
+                </Grid>
+
+                <!-- 4) Next two rows -->
+                <Grid Grid.Row="3" Margin="0,0,0,12">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="16"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Row 0 -->
+                    <StackPanel Grid.Row="0" Grid.Column="0">
+                        <TextBlock Text="Phone" FontSize="12" Margin="0,0,0,4"/>
+                        <TextBox x:Name="txtPhone" Height="28" BorderBrush="{x:Null}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Grid.Column="2">
+                        <TextBlock Text="Gender" FontSize="12" Margin="0,0,0,4"/>
+                        <TextBox x:Name="txtGender" Height="28" BorderBrush="{x:Null}"/>
+                    </StackPanel>
+
+                    <!-- Row 1 -->
+                    <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,10,0,0">
+                        <TextBlock Text="Address" FontSize="12" Margin="0,0,0,4"/>
+                        <TextBox x:Name="txtAddress" Height="28" BorderBrush="{x:Null}"/>
+                    </StackPanel>
+                    <!--<StackPanel Grid.Row="1" Grid.Column="2" Margin="0,12,0,0">
+                        <TextBlock Text="Course" FontSize="12" Margin="0,0,0,4"/>
+                        <TextBox Height="28" BorderBrush="{x:Null}"/>
+                    </StackPanel>-->
+
+                    <StackPanel Grid.Row="2">
+                        <TextBlock Text="Course" FontSize="12" Margin="0,10,0,4"/>
+                        <TextBox x:Name="txtCourse" Height="28" BorderBrush="{x:Null}"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="3">
+                        <TextBlock Text="Year" FontSize="12" Margin="0,8,0,4"/>
+                        <TextBox x:Name="txtYearLevel" Height="28" BorderBrush="{x:Null}"/>
+                    </StackPanel>
+
+                    <!--<StackPanel Grid.Row="4">
+                        <TextBlock Text="Year" FontSize="12" Margin="0,0,0,4"/>
+                        <TextBox Height="28" BorderBrush="{x:Null}"/>
+                    </StackPanel>-->
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <!--Right Column-->
+        <Border Grid.Column="2" Background="#E1D2FF" CornerRadius="12" Margin="16" Height="320" Width="180">
+            <StackPanel Margin="16">
+
+                <!-- Contact Header -->
+                <TextBlock Text="Settings" FontSize="20" FontWeight="Bold" Foreground="#27104E"  TextWrapping="Wrap" Margin="0,0,0,4" FontFamily="Poppins" HorizontalAlignment ="Center"/>
+                <Rectangle Height="1" Fill="#888"/>
+                <!-- Toggle Button -->
+                <StackPanel Orientation="Horizontal" Margin="0,8">
+                    <ToggleButton x:Name="DarkModeToggle" Width="40" Height="20" Checked="DarkModeToggle_Checked" Unchecked="DarkModeToggle_Unchecked" Cursor="Hand">
+                        <ToggleButton.Template>
+                            <ControlTemplate TargetType="ToggleButton">
+                                <Grid Width="40" Height="20">
+                                    <Border x:Name="SwitchTrack" Background="#CCC" CornerRadius="10"/>
+                                    <Ellipse x:Name="SwitchThumb"  Fill="White"  Width="16" Height="16"  Margin="2,2,0,2"  HorizontalAlignment="Left"/>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsChecked" Value="True">
+                                        <Setter TargetName="SwitchTrack" Property="Background" Value="#9854CB"/>
+                                        <Setter TargetName="SwitchThumb" Property="HorizontalAlignment" Value="Right"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </ToggleButton.Template>
+                    </ToggleButton>
+                    <TextBlock Text="Dark Mode" VerticalAlignment="Center" Margin="8,0,0,0" FontWeight="Regular"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,8">
+                    <ToggleButton x:Name="SwitchNotificationToggle" Width="40" Height="20" Checked="NotifToggle_Checked" Unchecked="NotifToggle_Unchecked" Cursor="Hand">
+                        <ToggleButton.Template>
+                            <ControlTemplate TargetType="ToggleButton">
+                                <Grid Width="40" Height="20">
+                                    <Border x:Name="SwitchTrack" Background="#CCC" CornerRadius="10"/>
+                                    <Ellipse x:Name="SwitchThumb"  Fill="White"  Width="16" Height="16"  Margin="2,2,0,2"  HorizontalAlignment="Left"/>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsChecked" Value="True">
+                                        <Setter TargetName="SwitchTrack" Property="Background" Value="#9854CB"/>
+                                        <Setter TargetName="SwitchThumb" Property="HorizontalAlignment" Value="Right"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </ToggleButton.Template>
+                    </ToggleButton>
+                    <TextBlock Text="Notificaiton" VerticalAlignment="Center" Margin="8,0,0,0" FontWeight="Regular"/>
+                </StackPanel>
+                
+                <Button Content="Logout" Background="#5551FF" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Stretch"  Padding="12,6" Margin="0,35,0,0" FontSize="20" FontWeight="SemiBold" Height="50" Click="LogoutButton_Click" Cursor="Hand">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="8">
+                                <ContentPresenter HorizontalAlignment="Center"
+                              VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+        </Border>
+
+        <Canvas x:Name="PopupContainer"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Right"
+                Margin="20"
+                IsHitTestVisible="False"/>
+    </Grid>
+</Window>

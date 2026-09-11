@@ -1,0 +1,83 @@
+﻿<Window x:Class="EventDrivenProgEnrollmentSystem.UserNeed"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EventDrivenProgEnrollmentSystem"
+        mc:Ignorable="d"
+        Height="400" Width="600" Background="Transparent"
+        WindowStartupLocation="CenterScreen" 
+        WindowStyle="None" AllowsTransparency="True">
+    <Grid>
+        <Border Background="#F5F2FF"
+            BorderBrush="#27104E"
+            BorderThickness="2"
+            CornerRadius="12"
+            Padding="24">
+
+      
+            <Grid>
+                <!--Title-->
+                <StackPanel>
+                    <TextBlock Text="User Manual and Announcement" FontSize="30" Foreground="#27104E"/>
+                    <Rectangle Height="1" Fill="#888"/>
+                </StackPanel>
+               
+                
+                <!-- Close button top‐right -->
+                <Button Width="30" Height="30" FontSize="16" FontWeight="Bold" Content="✕" Cursor="Hand"  HorizontalAlignment="Right" VerticalAlignment="Top" Click="CloseWindow_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="Transparent">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <!-- Main content, pushed down so we don't overlap the close button -->
+                <StackPanel Margin="0,40,0,0">
+                    <!-- Section 1 -->
+                    <StackPanel Margin="0,24,0,24">
+                        <TextBlock Text="System Information"
+                       FontSize="18"
+                       FontWeight="SemiBold"
+                       Foreground="#27104E"
+                       FontFamily="Poppins"/>
+                        <StackPanel Margin="8,8,0,0">
+                            <TextBlock Text="• Students can only view their grades and financial statements"
+                         TextWrapping="Wrap"/>
+                            <TextBlock Text="• Students can edit their personal information based on relevancy"
+                         TextWrapping="Wrap"
+                         Margin="0,4,0,0"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <!-- Section 2 -->
+                    <StackPanel Margin="0,0,0,24">
+                        <TextBlock Text="Important Event"
+                       FontSize="18"
+                       FontWeight="SemiBold"
+                       Foreground="#27104E"/>
+                        <StackPanel Margin="8,8,0,0">
+                            <TextBlock Text="• Midterm Exam Starts on June 19, 2025"
+                         TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <!-- Section 3 -->
+                    <StackPanel>
+                        <TextBlock Text="Upcoming Updates"
+                       FontSize="18"
+                       FontWeight="SemiBold"
+                       Foreground="#27104E"/>
+                        <StackPanel Margin="8,8,0,0">
+                            <TextBlock Text="• Mobile Application Optimization"
+                         TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

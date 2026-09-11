@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="OnlyTable" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Function Name="dbo.usp_GetStudentName" Method="usp_GetStudentName">
+    <Parameter Name="AccountID" Parameter="accountID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_GetStudentNameResult">
+      <Column Name="First_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Last_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.uspAddAccount" Method="uspAddAccount">
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_AddEnrollmentForm" Method="usp_AddEnrollmentForm">
+    <Parameter Name="Account_ID" Parameter="account_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Last_Name" Parameter="last_Name" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="First_Name" Parameter="first_Name" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Middle_Name" Parameter="middle_Name" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Birthdate" Parameter="birthdate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Gender" Parameter="gender" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="Religion" Parameter="religion" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Nationality" Parameter="nationality" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="Phone" Parameter="phone" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="Age" Parameter="age" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Birth_Place" Parameter="birth_Place" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Course_Type" Parameter="course_Type" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Course_YearLevel" Parameter="course_YearLevel" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_GetAllStudents" Method="usp_GetAllStudents">
+    <ElementType Name="usp_GetAllStudentsResult">
+      <Column Name="StudentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(152)" CanBeNull="true" />
+      <Column Name="Course" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Birthdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Religion" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Nationality" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="YearLevel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Student_Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_AddSubject" Method="usp_AddSubject">
+    <Parameter Name="SubjectName" Parameter="subjectName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Units" Parameter="units" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Lab" Parameter="lab" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Time" Parameter="time" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_GetSubjects" Method="usp_GetSubjects">
+    <ElementType Name="usp_GetSubjectsResult">
+      <Column Name="Subject_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Units" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lab" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Subject_Time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_UpdateSubject" Method="usp_UpdateSubject">
+    <Parameter Name="SubjectName" Parameter="subjectName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Units" Parameter="units" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Lab" Parameter="lab" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Time" Parameter="time" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_GetAvailableSubjects" Method="usp_GetAvailableSubjects">
+    <Parameter Name="StudentID" Parameter="studentID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_GetAvailableSubjectsResult">
+      <Column Name="SubjectID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Subject" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_AddStudentSchedule" Method="usp_AddStudentSchedule">
+    <Parameter Name="StudentID" Parameter="studentID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SubjectID" Parameter="subjectID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_GetStudentInfo" Method="usp_GetStudentInfo">
+    <Parameter Name="AccountID" Parameter="accountID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_GetStudentInfoResult">
+      <Column Name="Student_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="First_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Last_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Course_Type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Course_YearLevel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Student_Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_GetStudentSchedule" Method="usp_GetStudentSchedule">
+    <Parameter Name="StudentID" Parameter="studentID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_GetStudentScheduleResult">
+      <Column Name="Subject" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Unit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lab" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Schedule" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_UpdateUsernameAndStatusByName" Method="usp_UpdateUsernameAndStatusByName">
+    <Parameter Name="FirstName" Parameter="firstName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="LastName" Parameter="lastName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="StudentStatus" Parameter="studentStatus" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_UpdateUsernameAndStatus" Method="usp_UpdateUsernameAndStatus">
+    <Parameter Name="AccountID" Parameter="accountID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="StudentStatus" Parameter="studentStatus" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_UpdateUsernameAndStatusByEmail" Method="usp_UpdateUsernameAndStatusByEmail">
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="StudentStatus" Parameter="studentStatus" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_GetStudentName" Method="usp_GetStudentName1">
+    <Parameter Name="AccountID" Parameter="accountID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_GetStudentNameResult1">
+      <Column Name="First_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Last_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_GetStudentSubjects" Method="usp_GetStudentSubjects">
+    <Parameter Name="AccountID" Parameter="accountID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_GetStudentSubjectsResult">
+      <Column Name="Subject" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Unit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lab" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_AddAccountRecord" Method="usp_AddAccountRecord">
+    <Parameter Name="Account_ID" Parameter="account_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AcademicYear" Parameter="academicYear" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="PaymentMethod" Parameter="paymentMethod" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Amount" Parameter="amount" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Balance" Parameter="balance" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="usp_AddAccountRecordResult">
+      <Column Name="NewRecordID" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

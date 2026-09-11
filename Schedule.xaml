@@ -1,0 +1,115 @@
+﻿<Window x:Class="EventDrivenProgEnrollmentSystem.Schedule"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EventDrivenProgEnrollmentSystem"
+        mc:Ignorable="d"
+        Title="Schedule" Height="500" Width="800"
+         WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Header-->
+        <Border Grid.Row="0" Background="#C7B9FF">
+            <StackPanel Orientation="Horizontal"  VerticalAlignment="Center" Margin="2,0">
+                <Image Source="C:\Users\Robin\Downloads\unisouthlogo.png" Height="80" Width="80" Stretch="Uniform"/>
+                <TextBlock Text="UniSouth" FontSize="25" FontWeight="Bold" Foreground="#2D2D2D" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,20,0"></TextBlock>
+            </StackPanel>
+        </Border>
+
+        <StackPanel Grid.Row="1" Margin="40,20,40,20">
+            <Grid>
+                <!-- Title + underline -->
+                <StackPanel Grid.Column="0">
+                    <TextBlock x:Name="txtStudentHeader" Text="Student Name - Course" FontSize="28" VerticalAlignment="Center"/>
+
+                    <Rectangle Height="1" Fill="#888" Margin="0,4,0,0"/>
+                </StackPanel>
+
+                <!-- “Return Back” button aligned to right -->
+                <Button Grid.Column="1" Content="Proceed to Tution Fee" Background="#9854CB" Foreground="White" Padding="12,6" Margin="0,0,0,4" VerticalAlignment="Center" HorizontalAlignment="Right" BorderThickness="0" Height="35" FontWeight="SemiBold" Click="Button_Click"/>
+            </Grid>
+
+        </StackPanel>
+
+        <Grid Grid.Row="2" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <!-- headers -->
+                <RowDefinition Height="*"/>
+                <!-- listbox -->
+            </Grid.RowDefinitions>
+
+            <!-- 1) Column headers -->
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="180"/>
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+
+                 <TextBlock Grid.Column="0" Text="Subject" FontWeight="SemiBold" Foreground="#2D2D2D"
+                               HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                    <TextBlock Grid.Column="1" Text="Unit" FontWeight="SemiBold" Foreground="#2D2D2D"
+                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                    <TextBlock Grid.Column="2" Text="Lab" FontWeight="SemiBold" Foreground="#2D2D2D"
+                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                    <TextBlock Grid.Column="3" Text="Time" FontWeight="SemiBold" Foreground="#2D2D2D"
+                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="4" Text="Day" FontWeight="SemiBold" Foreground="#2D2D2D" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+
+            <!-- 2) The actual schedule listbox -->
+            <ListBox x:Name="lbSchedule" Grid.Row="1" Margin="0,5,0,0" FontSize="14"  BorderThickness="0" Background="White"  HorizontalContentAlignment="Stretch"  ScrollViewer.HorizontalScrollBarVisibility="Disabled" AlternationCount="2">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Background" Value="White"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        <Style.Triggers>
+                            <!-- Alternating row color -->
+                            <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                                <Setter Property="Background" Value="#F7F8FA"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="10,4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="180"/>
+                                <ColumnDefinition Width="200"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Subject -->
+                            <TextBlock Grid.Column="0" Text="{Binding Subject}" VerticalAlignment="Center"/>
+                            <!-- Unit -->
+                            <TextBlock Grid.Column="1" Text="{Binding Unit}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <!-- Lab -->
+                            <TextBlock Grid.Column="2" Text="{Binding Lab}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <!-- Time -->
+                            <TextBlock Grid.Column="3" Text="{Binding Time}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="4" Text="{Binding Day}" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+
+
+    </Grid>
+</Window>

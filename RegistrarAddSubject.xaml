@@ -1,0 +1,124 @@
+﻿<Window x:Class="EventDrivenProgEnrollmentSystem.RegistrarAddSubject"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EventDrivenProgEnrollmentSystem"
+        mc:Ignorable="d"
+        Title="RegistrarAddSubject" Height="500" Width="800">
+    <Grid>
+        <Rectangle HorizontalAlignment="Left" Height="434" Stroke="Black" VerticalAlignment="Center" Width="106" Fill="#FFB484E2"/>
+        <Image Source="C:\Users\Robin\Downloads\unisouthlogo.png" Stretch="Uniform" Margin="-34,8,660,352" RenderTransformOrigin="0.414,0.488"/>
+        <Rectangle Height="57" Margin="106,0,0,0" Stroke="Black" VerticalAlignment="Top" Fill="#FF5E2C8E"/>
+
+        <TextBlock Text="Subject Name" HorizontalAlignment="Left" Margin="125,415,0,0" TextWrapping="Wrap"  VerticalAlignment="Top"/>
+        <TextBox x:Name="txtSubjectName" HorizontalAlignment="Left" Margin="125,433,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="257,415,0,0" TextWrapping="Wrap" Text="Unit" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtUnits" HorizontalAlignment="Left" Margin="257,433,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,415,0,0" TextWrapping="Wrap" Text="Lab" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtLab" HorizontalAlignment="Left" Margin="391,433,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="522,415,0,0" TextWrapping="Wrap" Text="Time" VerticalAlignment="Top"/>
+
+        <TextBox x:Name="txtTime" HorizontalAlignment="Left" Margin="522,433,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="653,415,0,0" TextWrapping="Wrap" Text="Day" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtDay" HorizontalAlignment="Left" Margin="653,433,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+
+        <!-- Button with avatar image -->
+        <Button HorizontalAlignment="Left" Margin="596,0,0,0" VerticalAlignment="Top" Width="204" Height="57" Background="#FF27104E">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <Image Source="C:\Users\Robin\Downloads\unisouthlogo.png" Width="55" Height="40"/>
+                <TextBlock Foreground="White"><Run Text="JOHN DOE"/><LineBreak/><Run Text="REGISTRAR"/><LineBreak/></TextBlock>
+            </StackPanel>
+        </Button>
+
+        <Rectangle HorizontalAlignment="Left" Height="316" Stroke="#FF281E58" VerticalAlignment="Top" Width="659" Fill="#FFDDD3E6" Margin="125,90,0,0"/>
+        <!--<TextBox HorizontalAlignment="Left" Margin="578,106,0,0" TextWrapping="Wrap" Text="Search..." VerticalAlignment="Top" Width="168" SelectionChanged="lstSubjects_SelectionChanged"/>-->
+        <ListView x:Name="lstSubjects" Margin="136,133,27,0" Height="250" FontSize="8" VerticalAlignment="Top" SelectionChanged="lstSubjects_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Subject" Width="150" DisplayMemberBinding="{Binding Subject}" />
+                    <GridViewColumn Header="Unit" Width="160" DisplayMemberBinding="{Binding Unit}" />
+                    <GridViewColumn Header="Lab" Width="150" DisplayMemberBinding="{Binding Lab}" />
+                    <GridViewColumn Header="Time" Width="150" DisplayMemberBinding="{Binding Time}" />
+                    <GridViewColumn Header="Day" Width="150" DisplayMemberBinding="{Binding Day}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="btnAddSubject" Content="+ Add Subject" 
+          HorizontalAlignment="Left" 
+          Margin="135,94,0,0" 
+          VerticalAlignment="Top" 
+          Background="#FF3F22A8" 
+          Foreground="White" 
+          BorderBrush="Transparent" 
+          BorderThickness="1" 
+          Height="36" 
+          Width="134" 
+          FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Click="btnAddSubject_Click" >
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.337"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" 
+                      BorderBrush="{TemplateBinding BorderBrush}" 
+                      BorderThickness="{TemplateBinding BorderThickness}" 
+                      CornerRadius="23">
+                        <!-- Set CornerRadius here -->
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="btnUpdateSubject" Content="Update Subject"  HorizontalAlignment="Left"  Margin="280,94,0,0" VerticalAlignment="Top" Background="#FF3F22A8"  Foreground="White"  BorderBrush="Transparent"  BorderThickness="1"  Height="36"  Width="134"  FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Click="btnUpdateSubject_Click" >
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.337"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" 
+                BorderBrush="{TemplateBinding BorderBrush}" 
+                BorderThickness="{TemplateBinding BorderThickness}" 
+                CornerRadius="23">
+                        <!-- Set CornerRadius here -->
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button Content="Back" HorizontalAlignment="Left"  Margin="637,94,0,0" VerticalAlignment="Top" Background="#FF3F22A8" Foreground="White" BorderBrush="Transparent" BorderThickness="1" Height="36" Width="134" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Click="Button_Back" >
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.337"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" 
+            BorderBrush="{TemplateBinding BorderBrush}" 
+            BorderThickness="{TemplateBinding BorderThickness}" 
+            CornerRadius="23">
+                        <!-- Set CornerRadius here -->
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+</Window>
